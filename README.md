@@ -1,48 +1,22 @@
-# Welcome to Remix + Vite!
+# Blog system made with Remix + Vite
 
-📖 See the [Remix docs](https://remix.run/docs) and the [Remix Vite docs](https://remix.run/docs/en/main/future/vite) for details on supported features.
+## environment variable
 
-## Typegen
+- .dev.vars
 
-Generate types for your Cloudflare bindings in `wrangler.toml`:
+```env
+DATABASE_URL=prisma://localhost:8000/?api_key=a
 
-```sh
-npm run typegen
+GOOGLE_PROJECT_ID="xxxx"
+GOOGLE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\nxxxx\n-----END PRIVATE KEY-----\n"
+GOOGLE_CLIENT_EMAIL="xxxx@xxxxx.iam.gserviceaccount.com"
+
+
+NEXT_PUBLIC_projectId="xxxx"
+NEXT_PUBLIC_apiKey="xxxxxxxx"
+NEXT_PUBLIC_measurementId="G-xxxxx"
+NEXT_PUBLIC_OGP_URL="https://xxxxx"
+NEXT_PUBLIC_IMAGE_URL="https://xxxxx"
+
+SECRET_KEY=xxxxx
 ```
-
-You will need to rerun typegen whenever you make changes to `wrangler.toml`.
-
-## Development
-
-Run the Vite dev server:
-
-```sh
-npm run dev
-```
-
-To run Wrangler:
-
-```sh
-npm run build
-npm run start
-```
-
-## Deployment
-
-> [!WARNING]  
-> Cloudflare does _not_ use `wrangler.toml` to configure deployment bindings.
-> You **MUST** [configure deployment bindings manually in the Cloudflare dashboard][bindings].
-
-First, build your app for production:
-
-```sh
-npm run build
-```
-
-Then, deploy your app to Cloudflare Pages:
-
-```sh
-npm run deploy
-```
-
-[bindings]: https://developers.cloudflare.com/pages/functions/bindings/
